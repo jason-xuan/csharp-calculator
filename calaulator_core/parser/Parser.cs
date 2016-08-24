@@ -287,6 +287,12 @@ namespace calaulator_core.parser
                     {
                         throw new SyntaxError("variable is not exist.");
                     }
+                case Tag.SIN:
+                case Tag.COS:
+                case Tag.TAN:
+                case Tag.LN:
+                case Tag.LOG:
+                    return call();
                 case Tag.NUM:
                     Node node = new Variable(((Num)peek).Value);
                     next();
@@ -297,6 +303,24 @@ namespace calaulator_core.parser
                     return node2;
             }
             throw new SyntaxError("syntax error.");
+        }
+        
+        /// <summary>
+        /// 函数调用
+        /// 文法:
+        /// call -> func ( expression )
+        /// </summary>
+        /// <returns>
+        /// 
+        /// </returns>
+        private Node call()
+        {
+            Tag func = peek.Tag;
+            next();
+            match('(');
+            Node expr = expression();
+            match(')');
+            return new Function(func, expr);
         }
     }
 }

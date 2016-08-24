@@ -21,6 +21,11 @@ namespace calaulator_core.scanner
 
             reserve(Word.True);
             reserve(Word.False);
+            reserve(Word.sin);
+            reserve(Word.cos);
+            reserve(Word.tan);
+            reserve(Word.ln);
+            reserve(Word.log);
             this.reader = reader;
         }
 
@@ -30,6 +35,11 @@ namespace calaulator_core.scanner
 
             reserve(Word.True);
             reserve(Word.False);
+            reserve(Word.sin);
+            reserve(Word.cos);
+            reserve(Word.tan);
+            reserve(Word.ln);
+            reserve(Word.log);
             reader = null;
         }
 
@@ -41,7 +51,7 @@ namespace calaulator_core.scanner
 
         public void reserve(Word w)
         {
-            words.Add(w.Lex, w);
+            words[w.Lex] = w;
         }
 
         public void next()
@@ -114,7 +124,6 @@ namespace calaulator_core.scanner
                 Word w = (Word)words[s];
                 if (w != null) return w;
                 w = new Word(s, Tag.ID);
-                words.Add(s, w);
                 return w;
             }
             Token tok = new Token(peek);

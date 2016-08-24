@@ -14,6 +14,8 @@
         SIN,            // sin
         COS,            // cos
         TAN,            // tan
+        LN,             // ln
+        LOG,            // log10
         ID,             // variable
         TRUE,           // 1
         FALSE,          // 0

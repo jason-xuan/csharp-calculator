@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="parser\Assign.cs" />
+    <Compile Include="parser\Function.cs" />
     <Compile Include="parser\Identifier.cs" />
     <Compile Include="parser\Node.cs" />
     <Compile Include="parser\Operation.cs" />

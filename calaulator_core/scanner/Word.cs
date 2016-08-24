@@ -20,7 +20,7 @@ namespace calaulator_core.scanner
         /// 常用的静态 Word 对象，不重复构建
         /// </summary>
         public static readonly Word
-            and, or, eq, ne, le, ge, minus, True, False, sin, cos, tan;
+            and, or, eq, ne, le, ge, minus, True, False, sin, cos, tan, ln, log;
         static Word()
         {
             eq = new Word("==", Tag.EQ);
@@ -29,9 +29,11 @@ namespace calaulator_core.scanner
             ge = new Word(">=", Tag.GE);
             True = new Word("True", Tag.TRUE);
             False = new Word("False", Tag.FALSE);
-            sin  = new Word("sin", Tag.FALSE);
+            sin  = new Word("sin", Tag.SIN);
             cos = new Word("cos", Tag.COS);
             tan = new Word("tan", Tag.TAN);
+            ln = new Word("ln", Tag.LN);
+            log = new Word("log", Tag.LOG);
         }
 
         /// <summary>
