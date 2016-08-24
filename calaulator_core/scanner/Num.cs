@@ -5,10 +5,17 @@
     /// </summary>
     public class Num : Token
     {
-        public readonly int value;
+        private readonly int value;
         public Num(int value) : base(Tag.NUM)
         {
             this.value = value;
+        }
+        public double Value
+        {
+            get
+            {
+                return value;
+            }
         }
         public override string ToString()
         {

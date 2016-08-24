@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO;
 using System.Text;
-
+using calaulator_core.parser;
 namespace calaulator_core.scanner
 {
     public class Scanner
@@ -19,15 +19,28 @@ namespace calaulator_core.scanner
             reserve(Word.False);
             this.reader = reader;
         }
-        void reserve(Word w)
+        public Scanner()
+        {
+            words = new Hashtable();
+
+            reserve(Word.True);
+            reserve(Word.False);
+            reader = null;
+        }
+        public void ResetReader(StringReader reader)
+        {
+            this.reader = reader;
+            peek = ' ';
+        }
+        public void reserve(Word w)
         {
             words.Add(w.lex, w);
         }
-        void next()
+        public void next()
         {
             peek = (char)reader.Read();
         }
-        Boolean next(char c)
+        public bool next(char c)
         {
             next();
             if (peek != c)
@@ -42,7 +55,7 @@ namespace calaulator_core.scanner
                 if (peek == ' ' || peek == '\t' || peek == '\r') continue;
                 else if (peek == '\n') line = line + 1;
                 // int -1 转换为char 后的值
-                else if (peek == 65535) return null;
+                else if (peek == 65535) return new Token(Tag.END);
                 break;
             }
             switch (peek)

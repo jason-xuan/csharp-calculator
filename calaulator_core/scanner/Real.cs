@@ -5,10 +5,17 @@
     /// </summary>
     public class Real : Token
     {
-        public readonly double value;
+        private readonly double value;
         public Real(double value) : base(Tag.REAL)
         {
             this.value = value;
+        }
+        public double Value
+        {
+            get
+            {
+                return value;
+            }
         }
         public override string ToString()
         {

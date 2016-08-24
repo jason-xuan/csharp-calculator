@@ -5,25 +5,28 @@
     /// </summary>
     public class Token
     {
-        public readonly Tag tag;
+        public Tag Tag
+        {
+            get;
+        }
 
         public Token(char v)
         {
-            tag = (Tag)v;
+            Tag = (Tag)v;
         }
 
         public Token(Tag t)
         {
-            tag = t;
+            Tag = t;
         }
         public override string ToString()
         {
-            if ((int)tag < 256)
+            if ((int)Tag < 256)
             {
-                char t = (char)tag;
+                char t = (char)Tag;
                 return t.ToString();
             }
-            return tag.ToString();
+            return Tag.ToString();
         }
     }
 

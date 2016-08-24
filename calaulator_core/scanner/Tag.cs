@@ -5,25 +5,20 @@
     /// </summary>
     public enum Tag : int
     {
-        AND = 256,
+        EQ = 256,       // ==
+        GE,             // >=
+        LE,             // <=
+        NE,             // !=
+        NUM,            // int
+        REAL,           // double
+        SIN,            // sin
+        COS,            // cos
+        TAN,            // tan
+        ID,             // variable
+        TRUE,           // 1
+        FALSE,          // 0
         BASIC,
-        BREAK,
-        DO,
-        ELSE,
-        EQ,
-        FALSE,
-        GE,
-        ID,
-        IF,
-        INDEX,
-        LE,
-        MINUS,
-        NE,
-        NUM,
-        OR,
-        REAL,
-        TEMP,
-        TRUE,
-        WHILE,
+        START,          // control
+        END             // control
     }
 }
