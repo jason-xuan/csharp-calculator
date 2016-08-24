@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="parser\AdditiveExpression.cs" />
     <Compile Include="parser\Assign.cs" />
     <Compile Include="parser\Identifier.cs" />
     <Compile Include="parser\Node.cs" />

@@ -8,9 +8,13 @@ namespace calaulator_core.scanner
     public class Scanner
     {
         public static int line = 1;
+
         char peek = ' ';
+
         Hashtable words;
+
         StringReader reader;
+
         public Scanner(StringReader reader)
         {
             words = new Hashtable();
@@ -19,6 +23,7 @@ namespace calaulator_core.scanner
             reserve(Word.False);
             this.reader = reader;
         }
+
         public Scanner()
         {
             words = new Hashtable();
@@ -27,19 +32,23 @@ namespace calaulator_core.scanner
             reserve(Word.False);
             reader = null;
         }
+
         public void ResetReader(StringReader reader)
         {
             this.reader = reader;
             peek = ' ';
         }
+
         public void reserve(Word w)
         {
-            words.Add(w.lex, w);
+            words.Add(w.Lex, w);
         }
+
         public void next()
         {
             peek = (char)reader.Read();
         }
+
         public bool next(char c)
         {
             next();
@@ -48,6 +57,7 @@ namespace calaulator_core.scanner
             peek = ' ';
             return true;
         }
+
         public Token scan()
         {
             for (; ; next())

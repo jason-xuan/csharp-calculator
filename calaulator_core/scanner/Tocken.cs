@@ -10,15 +10,22 @@
             get;
         }
 
+        public Token(Tag t)
+        {
+            Tag = t;
+        }
+
+        /// <summary>
+        /// 重载函数，调用时不需要进行类型转换
+        /// </summary>
+        /// <param name="v">
+        /// Token内容
+        /// </param>
         public Token(char v)
         {
             Tag = (Tag)v;
         }
 
-        public Token(Tag t)
-        {
-            Tag = t;
-        }
         public override string ToString()
         {
             if ((int)Tag < 256)

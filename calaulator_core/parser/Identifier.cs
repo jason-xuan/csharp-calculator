@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace calaulator_core.parser
 {
+    /// <summary>
+    /// 变量结点
+    /// </summary>
     class Identifier : Node
     {
         private string name;
+
         private double? value;
+
         public string Name
         {
             get
@@ -17,10 +22,12 @@ namespace calaulator_core.parser
                 return name;
             }
         }
+
         public Identifier(string name)
         {
             this.name = name;
         }
+
         public override double Value
         {
             get
@@ -35,6 +42,13 @@ namespace calaulator_core.parser
                 }
             }
         }
+
+        /// <summary>
+        /// 赋值结点给变量赋值时适用的方法
+        /// </summary>
+        /// <param name="v">
+        /// 变量的值
+        /// </param>
         public void SetValue(double v)
         {
             value = v;

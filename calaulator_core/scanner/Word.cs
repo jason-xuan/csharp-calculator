@@ -7,7 +7,18 @@ namespace calaulator_core.scanner
     /// </summary>
     public class Word : Token
     {
-        public string lex = "";
+        private string lex = "";
+        public string Lex
+        {
+            get
+            {
+                return lex;
+            }
+        }
+
+        /// <summary>
+        /// 常用的静态 Word 对象，不重复构建
+        /// </summary>
         public static readonly Word
             and, or, eq, ne, le, ge, minus, True, False, sin, cos, tan;
         static Word()
@@ -19,14 +30,34 @@ namespace calaulator_core.scanner
             True = new Word("True", Tag.TRUE);
             False = new Word("False", Tag.FALSE);
             sin  = new Word("sin", Tag.FALSE);
+            cos = new Word("cos", Tag.COS);
+            tan = new Word("tan", Tag.TAN);
         }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="lex">
+        /// Token内容
+        /// </param>
+        /// <param name="tag">
+        /// Token类型
+        /// </param>
         public Word(string lex, Tag tag) : base(tag)
         {
             this.lex = lex;
         }
+
+        /// <summary>
+        /// 取得该Token的内容
+        /// </summary>
+        /// <returns>
+        /// 该Token内容
+        /// </returns>
         public override string ToString()
         {
-            return lex;
+            return Lex;
         }
+
     }
 }
