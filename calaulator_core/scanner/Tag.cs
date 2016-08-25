@@ -11,6 +11,8 @@
         NE,             // !=
         NUM,            // int
         REAL,           // double
+        Pi,             // PI
+        e,              // e
         SIN,            // sin
         COS,            // cos
         TAN,            // tan

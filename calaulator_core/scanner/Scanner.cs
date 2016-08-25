@@ -26,6 +26,9 @@ namespace calaulator_core.scanner
             reserve(Word.tan);
             reserve(Word.ln);
             reserve(Word.log);
+            reserve(Word.e);
+            reserve(Word.E);
+            reserve(Word.Pi);
             this.reader = reader;
         }
 
@@ -40,6 +43,9 @@ namespace calaulator_core.scanner
             reserve(Word.tan);
             reserve(Word.ln);
             reserve(Word.log);
+            reserve(Word.e);
+            reserve(Word.E);
+            reserve(Word.Pi);
             reader = null;
         }
 

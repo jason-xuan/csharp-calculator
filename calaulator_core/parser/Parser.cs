@@ -287,6 +287,12 @@ namespace calaulator_core.parser
                     {
                         throw new SyntaxError("variable is not exist.");
                     }
+                case Tag.Pi:
+                    next();
+                    return new Variable(Math.PI);
+                case Tag.e:
+                    next();
+                    return new Variable(Math.E);
                 case Tag.SIN:
                 case Tag.COS:
                 case Tag.TAN:
